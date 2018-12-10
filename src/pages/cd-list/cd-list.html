@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Mes CD</ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="onToggleMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item icon-start *ngFor="let cd of cdsList; let i = index" (click)="onLoadCd(i)">
+      <ion-icon name="power" [color]="cd.isOn ? 'secondary' : 'danger'"></ion-icon>
+      {{ cd.name }}
+    </button>
+  </ion-list>
+</ion-content>
+
+<ion-footer padding>
+  <ion-tabs>
+    <ion-tab [root]="bookListRoot" tabTitle="Livres" tabIcon="book"></ion-tab>
+    <ion-tab [root]="cdListRoot" tabTitle="CD" tabIcon="disc"></ion-tab>
+  </ion-tabs>
+</ion-footer>

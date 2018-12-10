@@ -1,0 +1,21 @@
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content class="outer-content">
+        <ion-list>
+            <button ion-item (click)="onNavigate(rootPage)">
+                <ion-icon name="return-left" item-start color="primary"></ion-icon>
+                <ion-label>Retour</ion-label>
+            </button>
+
+            <button ion-item (click)="onNavigate(settingsPage)">
+                <ion-icon name="settings" item-start color="primary"></ion-icon>
+                <ion-label>Reglages</ion-label>
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content></ion-nav>
